@@ -13,11 +13,14 @@ Link to the project > **https://jovial-smakager-0364eb.netlify.app/**
 
 **SCREENSHOTS**<br><br>
 HOME PAGE <br><br>
-<img width="50%" alt="image" src="https://github.com/SofiaIotti/Counter-JS/assets/137886054/698f9e1c-8d54-464f-9a66-cb3a15e28a7c"><br>
+<img width="50%" alt="image" src="https://github.com/SofiaIotti/Counter-JS/assets/137886054/89ff057b-d6d3-46a4-b9ca-271a73fa7928">
+<br>
 TIMER<br><br>
-<img width="50%" alt="image" src="https://github.com/SofiaIotti/Counter-JS/assets/137886054/353477bd-7612-428d-9b1b-d5030aaf5e60"><br>
+<img width="50%" alt="image" src="https://github.com/SofiaIotti/Counter-JS/assets/137886054/4039f020-639e-47aa-bbe2-548091613701">
+<br>
 
-<img width="50%" alt="image" src="https://github.com/SofiaIotti/Counter-JS/assets/137886054/582bd892-d0cb-4368-b1f7-6e92404cf8ad"><br><br>
+<img width="50%" alt="image" src="https://github.com/SofiaIotti/Counter-JS/assets/137886054/082a7fa8-7b01-4877-acf6-9752da393f16">
+<br><br>
 
 
 ITA
