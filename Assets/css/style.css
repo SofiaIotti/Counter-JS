@@ -1,7 +1,7 @@
 body {
     background-color: #bcdae0;
     color: #142a2e;
-
+    margin: 0;
 }
 div{
     font-family: 'Baloo Bhaijaan 2', cursive;
@@ -24,6 +24,7 @@ div{
    height: 12vh;
    background-color: #142a2e;
    color: whitesmoke;
+   text-justify: center;
 }
 #plusButton,#minusButton {
     width: 20vw;
@@ -52,8 +53,16 @@ div{
     border-radius: 10px;
     font-size:2vh;
 }
+
 #label{
-    margin-right: 3vw;
+    display: flex;
+    justify-content: center;
+}
+#formBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #countdownButton{
     margin-top: 3vh;
@@ -75,47 +84,69 @@ div{
 }
 
 #coriandoli{
+    display: none;
     width: 100vw;
     height: 100vh;
     position: absolute;
     opacity: 0;
-    transition: all 1s;
     z-index: -1;
 }
 
 .coriandoli-show{
+    display: block !important;
     opacity: 1 !important; 
-    transition: all 1s;
     z-index: 10 !important;
 }
-
-@media screen and (max-width:800px){
+@media screen and (max-width: 1000px){
+    #resetButton, #timerButton{
+        width: 25vw;
+    }
+    #minusButton, #result, #plusButton{
+        width: 30vw;
+    }
+    #timerModal {
+        width: 70vw;
+        position: fixed;
+        left: 15vw;
+        right: 15vw;
+    }
+}
+@media screen and (max-width: 800px){
     #form-group{
         width: 25vw;
     }
     #seconds{
         width: 25vw;
     }
-}
-@media screen and (min-width:400px) {
-
-    #plusDiv{
-        text-align: left;
-        padding-left: 10vw;
+    #minusDiv, #resultDiv, #plusDiv{
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
     }
-
-    #minusDiv{
-        text-align: right;
-        padding-right: 10vw;
+    #minusButton, #result, #plusButton{
+        display: flex;
+        height: 15vh;
+        width: 40vw;
+        align-items: center;
+        justify-content: center;
     }
-
-    #timerDiv{
-        text-align: left;
-        padding-left: 5vw;
-    } 
-    #resetDiv { 
-        text-align: right;
-        padding-right: 5vw;
+    #resetDiv, #timerDiv{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    
+    #resetButton, #timerButton{
+        width: 30vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    h1{
+        font-size: 80%;
+    }
+    #countdownButton{
+        height: 4vh;
+        font-size: small;
+    }
 }

@@ -1,29 +1,37 @@
 window.onload = function(){  
 
-    plusBtn = document.getElementById("plusButton");
-    minusBtn = document.getElementById("minusButton");
-    resetBtn = document.getElementById("resetButton");
-    timerBtn = document.getElementById("timerButton");
-    countdownBtn = document.getElementById("countdownButton");
+    const countdownBtn = document.getElementById("countdownButton");
     let  counter = 0;
-    let interval;
+    
 
-    plusBtn.addEventListener('click', function(){
-        ++counter;
-        document.getElementById("result").innerHTML = counter;
+    document.getElementById("homePage").addEventListener("click", (event) => {
+        if(event.target.tagName === "BUTTON"){
+
+            const buttonId = event.target.id;
+            
+           switch (buttonId){
+            case "plusButton":
+                ++counter;
+                document.getElementById("result").innerHTML = counter;
+                break;
+                
+            case "minusButton":
+                --counter;
+                document.getElementById("result").innerHTML = counter;
+                break;
+            
+            case "resetButton":
+                counter = 0;
+                document.getElementById("result").innerHTML = counter;
+                break;
+            case "timerButton":
+                document.getElementById("timerModal").style.display = "flex";
+                document.getElementById("boxShadow").style.display = "block";
+                document.getElementById("homePage").style.display = "none";
+                break;
+            }
+        };
     });
-
-    minusBtn.addEventListener('click', function(){
-    --counter;
-    document.getElementById("result").innerHTML = counter;
-    });
-
-    timerBtn.addEventListener('click', function(){
-        document.getElementById("timerModal").style.display = "flex";
-        document.getElementById("boxShadow").style.display = "block";
-        document.getElementById("homePage").style.display = "none";
-        });
-
     countdownBtn.addEventListener('click', function(){
         
         document.getElementById("timerModal").style.display = "none";
@@ -32,7 +40,7 @@ window.onload = function(){
          
         let time = document.getElementById("seconds").value;
 
-        interval = setInterval(function(){
+        let interval = setInterval(function(){
                 document.getElementById("result").innerHTML = time;
                 time--;
                 if (time <= 0) {
@@ -46,11 +54,4 @@ window.onload = function(){
                     };
         }, 1000);
     });
-
-    resetBtn.addEventListener('click', function(){
-        clearInterval(interval);
-        counter = 0;
-        document.getElementById("result").innerHTML = counter;
-    });
-
 };
