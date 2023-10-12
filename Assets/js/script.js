@@ -1,57 +1,59 @@
 window.onload = function(){  
 
+    const modal = document.getElementById("timerModal");
+    const box = document.getElementById("boxShadow");
+    const containerDiv = document.getElementById("homePage"); 
     const countdownBtn = document.getElementById("countdownButton");
-    let  counter = 0;
-    
+    const coriandoli = document.getElementById("coriandoli");
+    let result = document.getElementById("result");
+    let  counter = 0;  
 
     document.getElementById("homePage").addEventListener("click", (event) => {
         if(event.target.tagName === "BUTTON"){
-
-            const buttonId = event.target.id;
+           const buttonId = event.target.id;
             
            switch (buttonId){
             case "plusButton":
                 ++counter;
-                document.getElementById("result").innerHTML = counter;
                 break;
                 
             case "minusButton":
                 --counter;
-                document.getElementById("result").innerHTML = counter;
                 break;
             
             case "resetButton":
                 counter = 0;
-                document.getElementById("result").innerHTML = counter;
                 break;
             case "timerButton":
-                document.getElementById("timerModal").style.display = "flex";
-                document.getElementById("boxShadow").style.display = "block";
-                document.getElementById("homePage").style.display = "none";
+                modal.style.display = "flex";
+                box.style.display = "block";
+                containerDiv.style.display = "none";
                 break;
             }
+            result.innerHTML = counter;
         };
     });
+    
     countdownBtn.addEventListener('click', function(){
         
-        document.getElementById("timerModal").style.display = "none";
-        document.getElementById("boxShadow").style.display = "none";
-        document.getElementById("homePage").style.display = "block";
+        modal.style.display = "none";
+        box.style.display = "none";
+        containerDiv.style.display = "block";
          
         let time = document.getElementById("seconds").value;
 
         let interval = setInterval(function(){
-                document.getElementById("result").innerHTML = time;
-                time--;
+                result.innerHTML = time;
                 if (time <= 0) {
                     
-                    document.getElementById("result").innerHTML = "FINE!";
-                    document.getElementById("coriandoli").classList.add("coriandoli-show");
+                    result.innerHTML = "FINE!";
+                    coriandoli.classList.add("coriandoli-show");
                     setTimeout(function(){
-                        document.getElementById("coriandoli").classList.remove("coriandoli-show");
+                        coriandoli.classList.remove("coriandoli-show");
                     }, 3000)
                     clearInterval(interval);
                     };
+                time --;
         }, 1000);
     });
 };
